@@ -56,11 +56,6 @@ region = Rect2(960, 192, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0klq3"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"down",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ve75t")
@@ -120,5 +115,5 @@ shape = SubResource("CircleShape2D_1mx7e")
 position = Vector2(-9.99997, -15)
 scale = Vector2(6.09896, 6.09896)
 sprite_frames = SubResource("SpriteFrames_0klq3")
-animation = &"down"
-frame_progress = 0.44417
+animation = &"walking"
+frame_progress = 0.821369

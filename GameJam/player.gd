@@ -22,7 +22,12 @@ func player_movement(delta):
 	play_animation(direction)
 	
 func play_animation(dir):
-	pass
+	if player_state == "Idle":
+		$AnimatedSprite2D.play("idle")	
+	if player_state == "walk":
+		if dir.y == -1:
+			
+			$AnimatedSprite2D.play("walking")
 	
 	
 	
