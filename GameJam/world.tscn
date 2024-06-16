@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs1wcqtx1ljr8"]
+[gd_scene load_steps=5 format=3 uid="uid://cs1wcqtx1ljr8"]
 
 [ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="1_ohub4"]
 [ext_resource type="PackedScene" uid="uid://dkvjowt648v0w" path="res://level_0.tscn" id="2_vml7s"]
+[ext_resource type="PackedScene" uid="uid://mqxe1h5bljkv" path="res://bat.tscn" id="3_ftqg0"]
+[ext_resource type="PackedScene" uid="uid://bunajirfjtkwf" path="res://rat.tscn" id="4_vr67m"]
 
 [node name="world" type="Node2D"]
 
@@ -9,3 +11,9 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ohub4")]
 position = Vector2(311, 215)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_ftqg0")]
+position = Vector2(360, 308)
+
+[node name="Rat" parent="." instance=ExtResource("4_vr67m")]
+position = Vector2(453, 309)

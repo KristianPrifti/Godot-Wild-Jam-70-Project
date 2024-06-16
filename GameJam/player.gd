@@ -7,6 +7,10 @@ var SPEED = 300
 var input_vector = Vector2(0,0)
 var last_input_vector = Vector2(0,0)
 
+
+func _ready():
+	$AnimatedSprite2D.play("idle_front")
+
 func _physics_process(delta):
 	
 	input_vector = Vector2.ZERO
