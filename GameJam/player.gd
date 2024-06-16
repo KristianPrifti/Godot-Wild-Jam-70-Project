@@ -61,4 +61,5 @@ func get_animation(v):
 	else:
 		return "idle_front"
 
-
+func player():
+	pass

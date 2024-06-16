@@ -3,10 +3,6 @@
 [ext_resource type="Script" path="res://player.gd" id="1_mgwa5"]
 [ext_resource type="Texture2D" uid="uid://bo2v5ej7aadcn" path="res://assets/Minimal Dungeon - Asset Pack DEMO/Players/Dwarf/dwarf x4.png" id="2_2064x"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbpjb"]
-radius = 112.0
-height = 238.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bau67"]
 atlas = ExtResource("2_2064x")
 region = Rect2(0, 768, 128, 128)
@@ -282,12 +278,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxg8y"]
+radius = 56.0
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
+collision_layer = 3
 script = ExtResource("1_mgwa5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_mbpjb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -120)
@@ -296,3 +293,7 @@ sprite_frames = SubResource("SpriteFrames_0klq3")
 animation = &"attack_side"
 frame = 3
 frame_progress = 0.184297
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_nxg8y")
