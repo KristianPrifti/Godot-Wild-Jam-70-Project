@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be8v1nbytuqe8"
-path="res://.godot/imported/dwarf x3.png-165af738e3c5a9ebdf8915e1f952ab91.ctex"
+uid="uid://cwnn8nmkpf2qb"
+path="res://.godot/imported/tileset, props & ui x2.png-2cf21038a17c235e5697c9820b5da7fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minimal Dungeon - Asset Pack DEMO/Players/Dwarf/dwarf x3.png"
-dest_files=["res://.godot/imported/dwarf x3.png-165af738e3c5a9ebdf8915e1f952ab91.ctex"]
+source_file="res://assets/Minimal Dungeon - Asset Pack DEMO/Tileset, Props & UI/tileset, props & ui x2.png"
+dest_files=["res://.godot/imported/tileset, props & ui x2.png-2cf21038a17c235e5697c9820b5da7fb.ctex"]
 
 [params]
 

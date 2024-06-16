@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2bv4my6uq6t1"
-path="res://.godot/imported/dwarf x1.png-44a250aa57a77ae1853abf085f2681ae.ctex"
+path="res://.godot/imported/dwarf x1.png-e6e13999868ede2b46c1e1b43d6b4050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minimal Dungeon - Asset Pack DEMO/Players/Dwarf/dwarf x1.png"
-dest_files=["res://.godot/imported/dwarf x1.png-44a250aa57a77ae1853abf085f2681ae.ctex"]
+source_file="res://assets/Minimal Dungeon - Asset Pack DEMO/Players/Dwarf/dwarf x1.png"
+dest_files=["res://.godot/imported/dwarf x1.png-e6e13999868ede2b46c1e1b43d6b4050.ctex"]
 
 [params]
 
