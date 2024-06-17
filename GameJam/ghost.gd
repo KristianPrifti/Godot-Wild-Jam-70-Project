@@ -44,6 +44,7 @@ func _on_detection_body_exited(body):  #checks if the player leaves the detectio
 func _on_hitbox_area_entered(area):
 	var damage_dealt #initialized the damage varible
 	if area.has_method("player"): #checks if the area attacking has the player method
+		print("g")
 		damage_dealt = 50 #sets the damage varible to 50
 		$AnimatedSprite2D.play("Damage")
 		take_damage(damage_dealt) #sends the damage dealt to the function for calculating damage
