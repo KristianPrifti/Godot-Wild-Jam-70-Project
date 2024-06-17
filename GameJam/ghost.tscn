@@ -82,7 +82,7 @@ shape = SubResource("CircleShape2D_e4ivs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jr0la")
-animation = &"Damage"
+animation = &"Ghost_Chase"
 
 [node name="hitbox" type="Area2D" parent="."]
 
@@ -94,5 +94,6 @@ shape = SubResource("CircleShape2D_xd27l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_4m4rp")
 
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
