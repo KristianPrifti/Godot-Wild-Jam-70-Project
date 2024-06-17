@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkvjowt648v0w"]
+[gd_scene load_steps=15 format=3 uid="uid://dkvjowt648v0w"]
 
 [ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_4ujhr"]
 [ext_resource type="Texture2D" uid="uid://bpwnq5htnohe1" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/surground.png" id="2_ibumn"]
 [ext_resource type="Texture2D" uid="uid://tnt2e2i2668g" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/walls.png" id="3_lxhd0"]
 [ext_resource type="Texture2D" uid="uid://bpqvdx8qtejsi" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/props.png" id="4_fqfxp"]
 [ext_resource type="Texture2D" uid="uid://cwx0vifjg0ypt" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/animated_props.png" id="5_81r8c"]
-[ext_resource type="Texture2D" uid="uid://p7krcp6tsmgi" path="res://cool_character.png" id="6_8uejo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrtbp"]
 texture = ExtResource("1_4ujhr")
@@ -1871,8 +1870,3 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_igupd")
 format = 2
 layer_0/tile_data = PackedInt32Array(131109, 0, 3, 1310756, 131072, 4, 1310755, 65536, 4, 131074, 196608, 1, 131075, 262145, 0, 1310757, 131072, 4, 1245221, 196608, 3, 1245220, 196608, 3, 1310754, 196608, 3)
-
-[node name="CoolCharacter" type="Sprite2D" parent="."]
-position = Vector2(361.5, 579)
-scale = Vector2(3.95313, 1.46875)
-texture = ExtResource("6_8uejo")

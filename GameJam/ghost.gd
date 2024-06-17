@@ -17,7 +17,8 @@ func _ready():
 func _physics_process(delta):
 	if !dead:
 		$"detection"/CollisionShape2D.disabled = false #if the enemy is not dead, do not disable thier detection zone
-		if player_in_range: #if the player is in range of the enemy's detection zone.
+		$"hitbox"/CollisionShape2D.disabled = false
+		if player_in_range && (self.get_global_position() - player.get_global_position()).length()  > 70 : #if the player is in range of the enemy's detection zone.
 			velocity = (player.get_global_position() - position).normalized() * speed * delta 
 			#the enimes velocity is the player's position/direction - the enemies position/direction
 			#mutiplied by the speed of the enemy
@@ -40,14 +41,13 @@ func _on_detection_body_exited(body):  #checks if the player leaves the detectio
 		player_in_range = false 
 
 '''taking damage'''
-
 func _on_hitbox_area_entered(area):
-	var damage_dealt #initialized the damage varible
-	if area.has_method("player"): #checks if the area attacking has the player method
-		print("g")
+	if area.name == "atk_right" || area.name == "atk_left" || area.name == "atk_up" || area.name == "atk_down":
+		var damage_dealt #initialized the damage varible
 		damage_dealt = 50 #sets the damage varible to 50
 		$AnimatedSprite2D.play("Damage")
 		take_damage(damage_dealt) #sends the damage dealt to the function for calculating damage
+
 
 func take_damage(damage):
 	health = health - damage #health is the current health - damage dealt
@@ -59,9 +59,13 @@ func take_damage(damage):
 
 func death(): # dies
 	dead = true
-	$AnimatedSprite2D.play("damage")
-	await get_tree().create_timer(1).timeout
+	$AnimatedSprite2D.play("Damage")
+	await $AnimatedSprite2D.animation_finished
 	queue_free()
 	
 func ghost():
 	pass
+
+
+
+

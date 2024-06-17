@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://ghost.gd" id="1_mrcx0"]
 [ext_resource type="Texture2D" uid="uid://bhctbjcsodj2d" path="res://assets/SGQ_Enemies_v1_0_0/SGQ_Enemies/normal/16x16/ghost.png" id="1_v3ifq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e4ivs"]
-radius = 6.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqn71"]
 atlas = ExtResource("1_v3ifq")
 region = Rect2(0, 32, 16, 16)
@@ -49,7 +46,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6r20p")
 }],
-"loop": true,
+"loop": false,
 "name": &"Damage",
 "speed": 5.0
 }, {
@@ -68,26 +65,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xd27l"]
-radius = 14.0357
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4ivs"]
+radius = 19.0263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qv4ci"]
+radius = 23.1948
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m4rp"]
-radius = 30.0167
+radius = 92.5419
 
 [node name="ghost" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_mrcx0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_jr0la")
+animation = &"Damage"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e4ivs")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_jr0la")
-animation = &"Ghost_Chase"
-
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-shape = SubResource("CircleShape2D_xd27l")
+shape = SubResource("CircleShape2D_qv4ci")
 
 [node name="detection" type="Area2D" parent="."]
 

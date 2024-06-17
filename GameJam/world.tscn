@@ -26,6 +26,16 @@ position = Vector2(506, 213)
 position = Vector2(357, 309)
 
 [node name="ghost" parent="." instance=ExtResource("6_xpwaj")]
-position = Vector2(649, 445)
-scale = Vector2(4, 4)
-collision_layer = 3
+position = Vector2(310, 455)
+
+[node name="ghost2" parent="." instance=ExtResource("6_xpwaj")]
+position = Vector2(196, 521)
+
+[node name="ghost3" parent="." instance=ExtResource("6_xpwaj")]
+position = Vector2(233, 275)
+
+[node name="ghost4" parent="." instance=ExtResource("6_xpwaj")]
+position = Vector2(432, 452)
+
+[node name="ghost5" parent="." instance=ExtResource("6_xpwaj")]
+position = Vector2(537, 403)
