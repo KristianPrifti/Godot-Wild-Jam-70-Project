@@ -8,30 +8,45 @@ var input_vector = Vector2(0,0)
 var last_input_vector = Vector2(0,0)
 
 @onready var animation_node = $AnimatedSprite2D
+#animation to play
+var anim
+
+var is_atk: bool = false
 
 func _ready():
 	$AnimatedSprite2D.play("idle_front")
 
 func _physics_process(delta):
 	
-	input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	input_vector.x += Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y += Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	if !is_atk:
+		input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+		input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+		input_vector.x += Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y += Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		
+		input_vector = input_vector.normalized()
+		
+		# move if you need to
+		if input_vector:
+			velocity = input_vector * SPEED
+			move_and_slide()
+			last_input_vector = input_vector
+		
+		# play the correct animation
+		anim = get_animation(input_vector)
+		animation_node.play(anim)
 	
-	input_vector = input_vector.normalized()
+	else:
+		anim = get_animation(input_vector)
+		anim = check_for_attack(anim)
+		animation_node.play(anim)
+		await animation_node.animation_finished
+		is_atk = false
+		
 	
-	# move if you need to
-	if input_vector:
-		velocity = input_vector * SPEED
-		move_and_slide()
-		last_input_vector = input_vector
-	
-	# play the correct animation
-	var anim = get_animation(input_vector)
-	animation_node.play(anim)
-	
+	if Input.is_action_just_pressed("space"):
+		is_atk = true
 
 func get_animation(v):
 	var x = v.x
@@ -60,6 +75,17 @@ func get_animation(v):
 	
 	else:
 		return "idle_front"
+
+func check_for_attack(a):
+		if a == "run_side" || a == "idle_side":
+			#print(a.substr(0,5))
+			return "attack_side"
+		elif a == "run_front" || a == "idle_front":
+			return "attack_front"
+		elif a == "run_back" || a == "idle_back":
+			return "attack_back"
+
+
 
 func player():
 	pass
