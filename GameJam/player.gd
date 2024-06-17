@@ -42,6 +42,10 @@ func _physics_process(delta):
 		anim = check_for_attack(anim)
 		animation_node.play(anim)
 		await animation_node.animation_finished
+		get_node("atk_right/CollisionShape2Dr").disabled = true
+		get_node("atk_left/CollisionShape2Dl").disabled = true
+		get_node("atk_down/CollisionShape2Dd").disabled = true
+		get_node("atk_up/CollisionShape2Du").disabled = true
 		is_atk = false
 		
 	
@@ -78,11 +82,16 @@ func get_animation(v):
 
 func check_for_attack(a):
 		if a == "run_side" || a == "idle_side":
-			#print(a.substr(0,5))
+			if animation_node.flip_h == false:
+				get_node("atk_right/CollisionShape2Dr").disabled = false
+			else:
+				get_node("atk_left/CollisionShape2Dl").disabled = false
 			return "attack_side"
 		elif a == "run_front" || a == "idle_front":
+			get_node("atk_down/CollisionShape2Dd").disabled = false
 			return "attack_front"
 		elif a == "run_back" || a == "idle_back":
+			get_node("atk_up/CollisionShape2Du").disabled = false
 			return "attack_back"
 
 

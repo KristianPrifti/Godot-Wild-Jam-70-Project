@@ -127,6 +127,8 @@ animations = [{
 }]
 
 [node name="Bat" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0or6n")
