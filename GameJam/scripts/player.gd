@@ -111,7 +111,6 @@ func check_for_attack(a):
 
 func take_damage(damage):
 	health = health - damage
-	print(health)
 	if health <= 0:
 		is_dead = true
 	else:

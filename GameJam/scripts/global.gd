@@ -1,6 +1,12 @@
 extends Node
 
 var player
+var gold
+var damage
 
 func _ready():
-	pass
+	gold = 0
+	damage = 1
+
+func get_gold(g):
+	gold += g

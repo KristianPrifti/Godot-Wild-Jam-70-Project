@@ -6,7 +6,7 @@ var player_in_range = false
 var player = null
 
 '''Enemy Combat Varible'''
-var health = 100
+var health = 2
 var dead = false
 
 
@@ -43,13 +43,11 @@ func _on_detection_body_exited(body):  #checks if the player leaves the detectio
 '''taking damage'''
 func _on_hitbox_area_entered(area):
 	if area.name == "atk_right" || area.name == "atk_left" || area.name == "atk_up" || area.name == "atk_down":
-		var damage_dealt #initialized the damage varible
-		damage_dealt = 50 #sets the damage varible to 50
-		take_damage(damage_dealt) #sends the damage dealt to the function for calculating damage
+		take_damage() #sends the damage dealt to the function for calculating damage
 
 
-func take_damage(damage):
-	health = health - damage #health is the current health - damage dealt
+func take_damage():
+	health = health - GLOBAL.damage #health is the current health - damage dealt
 	if health <= 0:
 		health = 0 #if health is less than or equal to 0, it is 0
 	
@@ -60,6 +58,7 @@ func death(): # dies
 	dead = true
 	$AnimatedSprite2D.play("Damage")
 	await $AnimatedSprite2D.animation_finished
+	GLOBAL.get_gold(1)
 	queue_free()
 	
 func ghost():
