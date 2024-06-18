@@ -8,10 +8,11 @@ var input_vector = Vector2(0,0)
 var last_input_vector = Vector2(0,0)
 
 @onready var animation_node = $AnimatedSprite2D
-# animation to play
+# animation variables
 var anim
 var is_atk: bool = false
 var is_taking_damage = false
+var is_dead
 
 var health
 
@@ -26,7 +27,11 @@ func _physics_process(delta):
 		animation_node.play("damaged")
 		await animation_node.animation_finished
 		is_taking_damage = false
-	
+	#-------------if player is dead---------------#
+	elif is_dead:
+		animation_node.play("death")
+		await animation_node.animation_finished
+		queue_free()
 	elif !is_atk:
 		input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -107,7 +112,10 @@ func check_for_attack(a):
 func take_damage(damage):
 	health = health - damage
 	print(health)
-	is_taking_damage = true
+	if health <= 0:
+		is_dead = true
+	else:
+		is_taking_damage = true
 	
 
 

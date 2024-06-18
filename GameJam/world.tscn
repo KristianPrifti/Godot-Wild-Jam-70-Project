@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs1wcqtx1ljr8"]
+[gd_scene load_steps=6 format=3 uid="uid://cs1wcqtx1ljr8"]
 
 [ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="1_ohub4"]
 [ext_resource type="PackedScene" uid="uid://dkvjowt648v0w" path="res://level_0.tscn" id="2_vml7s"]
 [ext_resource type="PackedScene" uid="uid://mqxe1h5bljkv" path="res://bat.tscn" id="3_ftqg0"]
-[ext_resource type="PackedScene" uid="uid://b86glwof054wu" path="res://goblin.tscn" id="4_ep6xb"]
 [ext_resource type="PackedScene" uid="uid://cj6oo3o8flu5t" path="res://rat.tscn" id="4_vr67m"]
 [ext_resource type="PackedScene" uid="uid://d1ybh1x5d4q1v" path="res://ghost.tscn" id="6_xpwaj"]
 
@@ -18,9 +17,6 @@ collision_priority = 2.0
 
 [node name="Rat" parent="." instance=ExtResource("4_vr67m")]
 position = Vector2(453, 309)
-
-[node name="Goblin" parent="." instance=ExtResource("4_ep6xb")]
-position = Vector2(506, 213)
 
 [node name="Bat" parent="." instance=ExtResource("3_ftqg0")]
 position = Vector2(357, 309)

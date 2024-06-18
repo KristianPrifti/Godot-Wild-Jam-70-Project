@@ -1376,7 +1376,7 @@ layer_0/tile_data = PackedInt32Array(65537, 65538, 3, 65538, 196610, 0, 65539, 1
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="Goblin1" parent="enemies" instance=ExtResource("5_jw2wa")]
-position = Vector2(360, 310)
+position = Vector2(330, 310)
 
 [node name="Goblin2" parent="enemies" instance=ExtResource("5_jw2wa")]
 position = Vector2(165, 310)
