@@ -23,7 +23,7 @@ func _ready():
 	g2.set_health(3)
 	g3.set_health(3)
 
-
+# if the pkayer reaches the door they pass the level
 func _on_door_body_entered(body):
 	if body.name == "Player":
 		print("level passed")
