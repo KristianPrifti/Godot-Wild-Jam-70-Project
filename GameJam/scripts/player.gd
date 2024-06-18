@@ -8,17 +8,26 @@ var input_vector = Vector2(0,0)
 var last_input_vector = Vector2(0,0)
 
 @onready var animation_node = $AnimatedSprite2D
-#animation to play
+# animation to play
 var anim
-
 var is_atk: bool = false
+var is_taking_damage = false
+
+var health
 
 func _ready():
+	GLOBAL.player = self
 	$AnimatedSprite2D.play("idle_front")
+	health = 10
 
 func _physics_process(delta):
 	
-	if !is_atk:
+	if is_taking_damage:
+		animation_node.play("damaged")
+		await animation_node.animation_finished
+		is_taking_damage = false
+	
+	elif !is_atk:
 		input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 		input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -95,6 +104,18 @@ func check_for_attack(a):
 			return "attack_back"
 
 
+func take_damage(damage):
+	health = health - damage
+	print(health)
+	is_taking_damage = true
+	
+
+
+func _on_hitbox_body_entered(body):
+	if body.has_method("enemy") && !body.dead:
+		take_damage(1)
+
 
 func player():
 	pass
+

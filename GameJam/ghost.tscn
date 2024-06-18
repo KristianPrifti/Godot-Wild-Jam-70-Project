@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://d1ybh1x5d4q1v"]
 
-[ext_resource type="Script" path="res://ghost.gd" id="1_mrcx0"]
+[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_mrcx0"]
 [ext_resource type="Texture2D" uid="uid://bhctbjcsodj2d" path="res://assets/SGQ_Enemies_v1_0_0/SGQ_Enemies/normal/16x16/ghost.png" id="1_v3ifq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqn71"]
@@ -69,7 +69,7 @@ animations = [{
 radius = 19.0263
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qv4ci"]
-radius = 23.1948
+radius = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m4rp"]
 radius = 92.5419

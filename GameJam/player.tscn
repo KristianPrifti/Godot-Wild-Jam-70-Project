@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://eywy18nlxka"]
+[gd_scene load_steps=43 format=3 uid="uid://eywy18nlxka"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_mgwa5"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_mgwa5"]
 [ext_resource type="Texture2D" uid="uid://bo2v5ej7aadcn" path="res://assets/Minimal Dungeon - Asset Pack DEMO/Players/Dwarf/dwarf x4.png" id="2_2064x"]
+[ext_resource type="Texture2D" uid="uid://xmccvtk1qtig" path="res://assets/dwarf_damaged.png" id="3_vtx4k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bau67"]
 atlas = ExtResource("2_2064x")
@@ -50,6 +51,10 @@ region = Rect2(384, 512, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfate"]
 atlas = ExtResource("2_2064x")
 region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixaog"]
+atlas = ExtResource("3_vtx4k")
+region = Rect2(0, 0, 128, 127)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbls6"]
 atlas = ExtResource("2_2064x")
@@ -180,8 +185,11 @@ animations = [{
 "name": &"attack_side",
 "speed": 50.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixaog")
+}],
+"loop": false,
 "name": &"damaged",
 "speed": 5.0
 }, {
@@ -282,16 +290,19 @@ animations = [{
 radius = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fu7va"]
-size = Vector2(150, 250)
+size = Vector2(203, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31fu2"]
-size = Vector2(150, 250)
+size = Vector2(203, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ll1"]
-size = Vector2(250, 150)
+size = Vector2(250, 203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm1kr"]
-size = Vector2(250, 150)
+size = Vector2(250, 203)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmkol"]
+radius = 56.1427
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -302,9 +313,7 @@ script = ExtResource("1_mgwa5")
 position = Vector2(0, -120)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0klq3")
-animation = &"attack_back"
-frame = 3
-frame_progress = 1.0
+animation = &"attack_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 24)
@@ -313,27 +322,36 @@ shape = SubResource("CircleShape2D_nxg8y")
 [node name="atk_right" type="Area2D" parent="."]
 
 [node name="CollisionShape2Dr" type="CollisionShape2D" parent="atk_right"]
-position = Vector2(140, 0)
+position = Vector2(113.5, 0)
 shape = SubResource("RectangleShape2D_fu7va")
 disabled = true
 
 [node name="atk_left" type="Area2D" parent="."]
 
 [node name="CollisionShape2Dl" type="CollisionShape2D" parent="atk_left"]
-position = Vector2(-140, 0)
+position = Vector2(-113.5, 0)
 shape = SubResource("RectangleShape2D_31fu2")
 disabled = true
 
 [node name="atk_up" type="Area2D" parent="."]
 
 [node name="CollisionShape2Du" type="CollisionShape2D" parent="atk_up"]
-position = Vector2(0, -140)
+position = Vector2(0, -113.5)
 shape = SubResource("RectangleShape2D_u6ll1")
 disabled = true
 
 [node name="atk_down" type="Area2D" parent="."]
 
 [node name="CollisionShape2Dd" type="CollisionShape2D" parent="atk_down"]
-position = Vector2(0, 140)
+position = Vector2(0, 113.5)
 shape = SubResource("RectangleShape2D_qm1kr")
 disabled = true
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="hitbox_area" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_gmkol")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
