@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbqjxxayowlft"]
+[gd_scene load_steps=12 format=3 uid="uid://bbqjxxayowlft"]
 
 [ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_06nyp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_tr2q6"]
@@ -1358,6 +1358,9 @@ sources/0 = SubResource("TileSetAtlasSource_pudje")
 sources/1 = SubResource("TileSetAtlasSource_vdio8")
 sources/2 = SubResource("TileSetAtlasSource_hasnp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l0x8"]
+size = Vector2(52, 57)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_tr2q6")
 
@@ -1386,3 +1389,11 @@ position = Vector2(690, 885)
 
 [node name="Player" parent="." instance=ExtResource("6_bm1om")]
 position = Vector2(501, 882)
+
+[node name="door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(74, 314.5)
+shape = SubResource("RectangleShape2D_4l0x8")
+
+[connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

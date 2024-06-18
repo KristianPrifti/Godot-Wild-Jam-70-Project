@@ -24,4 +24,6 @@ func _ready():
 	g3.set_health(3)
 
 
-
+func _on_door_body_entered(body):
+	if body.name == "Player":
+		print("level passed")
