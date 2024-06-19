@@ -4,6 +4,9 @@ extends Node2D
 @onready var g2 = get_node("enemies/Goblin2")
 @onready var g3 = get_node("enemies/Goblin3")
 
+# initial player position
+var player_pos = Vector2(500, 880)
+
 # variabled to keep bounds for movement
 var x_min1 = 310
 var y_min1 = 310
@@ -16,6 +19,8 @@ var y_max2 = 450
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GLOBAL.player != null:
+		GLOBAL.player.position = player_pos
 	g1.set_bounds(x_min1, y_min1, x_max1, y_max1)
 	g2.set_bounds(x_min2, y_min2, x_max2, y_max2)
 	g3.set_bounds(690, 885, 690, 885)
@@ -27,3 +32,7 @@ func _ready():
 func _on_door_body_entered(body):
 	if body.name == "Player":
 		print("level passed")
+
+
+func level():
+	pass

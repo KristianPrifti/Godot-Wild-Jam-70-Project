@@ -1,5 +1,6 @@
 extends Node
 
+var world
 var player
 var gold
 var damage
