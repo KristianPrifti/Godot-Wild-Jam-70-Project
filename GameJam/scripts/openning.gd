@@ -24,3 +24,7 @@ func do_start():
 	$AnimatedSprite2D.play("start")
 	await $AnimatedSprite2D.animation_finished
 	start_ended = true
+
+
+func _on_button_pressed():
+	GLOBAL.world.load_next_scene()

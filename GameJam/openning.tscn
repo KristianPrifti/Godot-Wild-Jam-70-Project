@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://baw4e7tr1w1ua"]
+[gd_scene load_steps=22 format=3 uid="uid://baw4e7tr1w1ua"]
 
 [ext_resource type="Script" path="res://scripts/openning.gd" id="1_3pxf6"]
 [ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_4cu6v"]
 [ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_yw45t"]
 [ext_resource type="PackedScene" uid="uid://dle10xdd3u2ou" path="res://dialogue.tscn" id="3_5vc0p"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="5_i5v53"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="6_mwkw7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
 atlas = ExtResource("1_4cu6v")
@@ -132,9 +134,30 @@ animation = &"loop"
 frame_progress = 0.574194
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(962, 449)
 scale = Vector2(10, 7)
 texture = ExtResource("2_yw45t")
 
 [node name="Dialogue" parent="Sprite2D" instance=ExtResource("3_5vc0p")]
 scale = Vector2(0.1, 0.142857)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 927.0
+offset_top = 766.0
+offset_right = 1027.0
+offset_bottom = 805.0
+scale = Vector2(4, 4)
+icon = ExtResource("5_i5v53")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.721899, 0.235234, 0.292506, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_mwkw7")
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

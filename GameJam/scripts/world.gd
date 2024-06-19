@@ -32,6 +32,7 @@ func load_next_scene():
 func load_first_scene():
 	var s = scenes[scene_count].instantiate()
 	add_child(s)
+	curr_scene = s
 	move_child(s, 0)
 	is_level(s)
 
