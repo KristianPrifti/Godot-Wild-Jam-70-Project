@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://baw4e7tr1w1ua"]
+
+[ext_resource type="Script" path="res://scripts/openning.gd" id="1_3pxf6"]
+[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_4cu6v"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_yw45t"]
+[ext_resource type="PackedScene" uid="uid://dle10xdd3u2ou" path="res://dialogue.tscn" id="3_5vc0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2r1"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyl6k"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsklb"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m18q8"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_585dw"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0bi"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clfml"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06fxn"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6guf"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vn7m"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24n7l"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7mf"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwfb"]
+atlas = ExtResource("1_4cu6v")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3uvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mae3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyl6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsklb")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m18q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_585dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clfml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06fxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6guf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vn7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24n7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdwfb")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[node name="Openning" type="Node2D"]
+script = ExtResource("1_3pxf6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1999.0
+offset_bottom = 1155.0
+color = Color(0.227451, 0.25098, 0.254902, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1636, 297)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_j3uvk")
+animation = &"loop"
+frame_progress = 0.574194
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(10, 7)
+texture = ExtResource("2_yw45t")
+
+[node name="Dialogue" parent="Sprite2D" instance=ExtResource("3_5vc0p")]
+scale = Vector2(0.1, 0.142857)

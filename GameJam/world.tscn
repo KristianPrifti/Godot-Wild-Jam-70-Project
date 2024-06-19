@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs1wcqtx1ljr8"]
+[gd_scene load_steps=8 format=3 uid="uid://cs1wcqtx1ljr8"]
 
 [ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="1_ohub4"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_r8nb4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mqxe1h5bljkv" path="res://bat.tscn" id="3_ftqg0"]
 [ext_resource type="PackedScene" uid="uid://cj6oo3o8flu5t" path="res://rat.tscn" id="4_vr67m"]
 [ext_resource type="PackedScene" uid="uid://d1ybh1x5d4q1v" path="res://ghost.tscn" id="6_xpwaj"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="7_rcpkq"]
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -39,24 +40,27 @@ position = Vector2(432, 452)
 position = Vector2(537, 403)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(0, 10)
+transform = Transform2D(1, 0, 0, 1, 0, 10)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 1701.0
-offset_top = 1.0
-offset_right = 1919.0
-offset_bottom = 144.0
-color = Color(0.205873, 0.278057, 0.14949, 0.447059)
+offset_top = -32.0
+offset_right = 1942.0
+offset_bottom = 109.0
+color = Color(0.286275, 0.376471, 0.211765, 0.576471)
 
 [node name="stats" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 1701.0
 offset_top = 1.0
 offset_right = 1920.0
-offset_bottom = 198.0
+offset_bottom = 118.0
 
 [node name="HP" type="Label" parent="CanvasLayer/stats"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_rcpkq")
 theme_override_font_sizes/font_size = 30
 text = "HP:"
 
@@ -64,6 +68,7 @@ text = "HP:"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.844537, 0.887837, 1.54018e-06, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_rcpkq")
 theme_override_font_sizes/font_size = 30
 text = "Gold:"
 
@@ -71,5 +76,6 @@ text = "Gold:"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.196649, 0.608589, 0.934903, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_rcpkq")
 theme_override_font_sizes/font_size = 30
 text = "Damage:"
