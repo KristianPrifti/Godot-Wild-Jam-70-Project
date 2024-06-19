@@ -1,23 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://juo72xi0wlw5"]
+[gd_scene load_steps=4 format=3 uid="uid://juo72xi0wlw5"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_q2t2h"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="2_44b8s"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="3_ynsoi"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_q2t2h")
 
 [node name="play_button" type="Button" parent="."]
-offset_left = 652.0
-offset_top = 158.0
-offset_right = 1268.0
-offset_bottom = 415.0
+offset_left = 664.0
+offset_top = 160.0
+offset_right = 764.0
+offset_bottom = 199.0
+scale = Vector2(6, 6)
+icon = ExtResource("2_44b8s")
+flat = true
+
+[node name="Label" type="Label" parent="play_button"]
+offset_left = 22.6667
+offset_top = 9.33333
+offset_right = 305.667
+offset_bottom = 110.333
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ynsoi")
+theme_override_font_sizes/font_size = 100
 text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="quit_button" type="Button" parent="."]
-offset_left = 655.0
-offset_top = 589.0
-offset_right = 1271.0
-offset_bottom = 846.0
+offset_left = 664.0
+offset_top = 592.0
+offset_right = 764.0
+offset_bottom = 631.0
+scale = Vector2(6, 6)
+icon = ExtResource("2_44b8s")
+flat = true
+
+[node name="Label" type="Label" parent="quit_button"]
+offset_left = 18.6667
+offset_top = 9.33333
+offset_right = 336.667
+offset_bottom = 110.333
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ynsoi")
+theme_override_font_sizes/font_size = 100
 text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

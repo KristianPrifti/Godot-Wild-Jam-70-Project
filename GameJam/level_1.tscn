@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbqjxxayowlft"]
+[gd_scene load_steps=14 format=3 uid="uid://bbqjxxayowlft"]
 
 [ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_06nyp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_tr2q6"]
 [ext_resource type="Texture2D" uid="uid://bpwnq5htnohe1" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/surground.png" id="2_74bmu"]
 [ext_resource type="Texture2D" uid="uid://tnt2e2i2668g" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/walls.png" id="3_80kg0"]
 [ext_resource type="PackedScene" uid="uid://b86glwof054wu" path="res://goblin.tscn" id="5_jw2wa"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="6_ux0dt"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="7_wyvh3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pudje"]
 texture = ExtResource("1_06nyp")
@@ -1360,6 +1362,9 @@ sources/2 = SubResource("TileSetAtlasSource_hasnp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l0x8"]
 size = Vector2(52, 57)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xn0s"]
+load_path = "res://.godot/imported/Wooden Board.png-28f920663fef330cd08a1b3441fd9511.ctex"
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_tr2q6")
 
@@ -1391,5 +1396,55 @@ position = Vector2(690, 885)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(74, 314.5)
 shape = SubResource("RectangleShape2D_4l0x8")
+
+[node name="how_to_move_text" type="Sprite2D" parent="."]
+position = Vector2(170, 835.5)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("6_ux0dt")
+
+[node name="Label" type="Label" parent="how_to_move_text"]
+anchors_preset = -1
+anchor_right = 1.73333
+anchor_bottom = 1.6383
+offset_left = -37.0
+offset_top = -38.0
+offset_right = 37.0
+offset_bottom = 37.0
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_wyvh3")
+theme_override_font_sizes/font_size = 30
+text = "Use WASD to move and SPACE to attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="goblins_text" type="Sprite2D" parent="."]
+position = Vector2(692, 561)
+scale = Vector2(2.9, 2.9)
+texture = SubResource("CompressedTexture2D_0xn0s")
+
+[node name="Label" type="Label" parent="goblins_text"]
+anchors_preset = -1
+anchor_left = -0.0222222
+anchor_right = 1.76667
+anchor_bottom = 1.58511
+offset_left = -39.0
+offset_top = -38.0
+offset_right = 37.0
+offset_bottom = 36.0
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_wyvh3")
+theme_override_font_sizes/font_size = 30
+text = "Goblins:
+HP: 3
+Damage: 1
+GoldDrop: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

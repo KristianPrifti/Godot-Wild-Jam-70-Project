@@ -53,21 +53,5 @@ func set_health(h):
 	health = h
 
 
-func take_damage():
-	health = health - GLOBAL.damage #health is the current health - damage dealt
-	if health <= 0:
-		health = 0 #if health is less than or equal to 0, it is 0
-	
-	if health <= 0 and !dead:
-		death() #cals the death function
-
-func death(): # dies
-	dead = true
-	$AnimatedSprite2D.play("damaged")
-	await $AnimatedSprite2D.animation_finished
-	GLOBAL.get_gold(1)
-	queue_free()
-
-
 func enemy():
 	pass

@@ -11,6 +11,22 @@ func _on_hitbox_area_entered(area):
 		take_damage() #sends the damage dealt to the function for calculating damage
 
 
+func take_damage():
+	health = health - GLOBAL.damage #health is the current health - damage dealt
+	if health <= 0:
+		health = 0 #if health is less than or equal to 0, it is 0
+	
+	if health <= 0 and !dead:
+		death() #cals the death function
+
+func death(): # dies
+	dead = true
+	$AnimatedSprite2D.play("damaged")
+	await $AnimatedSprite2D.animation_finished
+	GLOBAL.get_gold(2)
+	queue_free()
+
+
 func goblin():
 	pass
 
