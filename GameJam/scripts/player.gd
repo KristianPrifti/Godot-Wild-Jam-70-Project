@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 '''Player Movement Varibles'''
 
-var SPEED = 300
 
 var input_vector = Vector2(0,0)
 var last_input_vector = Vector2(0,0)
@@ -16,12 +15,9 @@ var is_atk: bool = false
 @export var enemy_cooldown = true
 @export var enemy_range = false
 
-var health
-
 func _ready():
 	GLOBAL.player = self
 	$AnimatedSprite2D.play("idle_front")
-	health = 10
 
 func _physics_process(delta):
 	
@@ -46,7 +42,7 @@ func _physics_process(delta):
 		
 		# move if you need to
 		if input_vector:
-			velocity = input_vector * SPEED
+			velocity = input_vector * GLOBAL.speed
 			move_and_slide()
 			last_input_vector = input_vector
 		
@@ -113,14 +109,14 @@ func check_for_attack(a):
 
 
 func take_damage(damage, enemy):
-	if health <= 0:
+	if GLOBAL.health <= 0:
 		is_dead = true
 	else:
 		is_taking_damage = true
 	
 	if enemy_range and enemy_cooldown and enemy != null:
 		
-		health = health - damage
+		GLOBAL.health = GLOBAL.health - damage
 		enemy_cooldown = false
 		await get_tree().create_timer(1).timeout
 		enemy_cooldown = true

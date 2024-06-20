@@ -1,0 +1,237 @@
+[gd_scene load_steps=18 format=3 uid="uid://c3006mys53cg1"]
+
+[ext_resource type="Texture2D" uid="uid://b67hsejvr5yew" path="res://assets/wizard_idle-removebg-preview.png" id="1_w2wa5"]
+[ext_resource type="Script" path="res://shop.gd" id="1_yifoe"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_dfj4p"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="3_suimg"]
+[ext_resource type="Texture2D" uid="uid://cj4d1vr6q0yk4" path="res://assets/Wooden Icon Health.png" id="4_hg56a"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="5_sclrw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htolc"]
+radius = 24.0
+height = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcj4g"]
+atlas = ExtResource("1_w2wa5")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gts5o"]
+atlas = ExtResource("1_w2wa5")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecxdh"]
+atlas = ExtResource("1_w2wa5")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0biyi"]
+atlas = ExtResource("1_w2wa5")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fyln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcj4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gts5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecxdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0biyi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dre43"]
+load_path = "res://.godot/imported/Wooden Icon Damage.png-f41f0162467cd80ac70657bab2523f98.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pf7ao"]
+load_path = "res://.godot/imported/Wooden Button.png-3de5d472a49998455c3a6cadda784f03.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nb1uk"]
+load_path = "res://.godot/imported/Wooden Icon Speed.png-b0bd62507d9244b07c9d97007f82bdf1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tvvi1"]
+load_path = "res://.godot/imported/Wooden Button.png-3de5d472a49998455c3a6cadda784f03.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m36j2"]
+radius = 98.326
+
+[node name="shop" type="CharacterBody2D"]
+script = ExtResource("1_yifoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("CapsuleShape2D_htolc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_4fyln")
+animation = &"idle"
+frame_progress = 0.0251292
+
+[node name="upgrades" type="Node2D" parent="."]
+position = Vector2(0, -120)
+scale = Vector2(1.2, 1.2)
+
+[node name="Helath" type="Sprite2D" parent="upgrades"]
+position = Vector2(-88, 4)
+texture = ExtResource("2_dfj4p")
+
+[node name="lvl" type="Label" parent="upgrades/Helath"]
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 74.0
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Lvl. 1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="buy_health" type="Button" parent="upgrades/Helath"]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 6.0
+offset_bottom = 13.0
+scale = Vector2(1.7, 1.7)
+icon = ExtResource("4_hg56a")
+flat = true
+
+[node name="health_price" type="Button" parent="upgrades/Helath"]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 60.0
+offset_bottom = 71.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("5_sclrw")
+flat = true
+
+[node name="Label" type="Label" parent="upgrades/Helath/health_price"]
+offset_left = 11.25
+offset_top = 8.75
+offset_right = 109.25
+offset_bottom = 38.75
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Damage" type="Sprite2D" parent="upgrades"]
+position = Vector2(0, 4)
+texture = ExtResource("2_dfj4p")
+
+[node name="lvl" type="Label" parent="upgrades/Damage"]
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 74.0
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Lvl. 1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="buy_damage" type="Button" parent="upgrades/Damage"]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 6.0
+offset_bottom = 13.0
+scale = Vector2(1.7, 1.7)
+icon = SubResource("CompressedTexture2D_dre43")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="damage_price" type="Button" parent="upgrades/Damage"]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 60.0
+offset_bottom = 71.0
+scale = Vector2(0.8, 0.8)
+icon = SubResource("CompressedTexture2D_pf7ao")
+flat = true
+
+[node name="Label" type="Label" parent="upgrades/Damage/damage_price"]
+offset_left = 11.25
+offset_top = 8.75
+offset_right = 109.25
+offset_bottom = 38.75
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Sprite2D" parent="upgrades"]
+position = Vector2(88, 4)
+texture = ExtResource("2_dfj4p")
+
+[node name="lvl" type="Label" parent="upgrades/Speed"]
+offset_left = -25.0
+offset_top = -34.0
+offset_right = 74.0
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Lvl. 1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="buy_speed" type="Button" parent="upgrades/Speed"]
+offset_left = -32.0
+offset_top = -27.0
+offset_right = 6.0
+offset_bottom = 13.0
+scale = Vector2(1.7, 1.7)
+icon = SubResource("CompressedTexture2D_nb1uk")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="speed_price" type="Button" parent="upgrades/Speed"]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 60.0
+offset_bottom = 71.0
+scale = Vector2(0.8, 0.8)
+icon = SubResource("CompressedTexture2D_tvvi1")
+flat = true
+
+[node name="Label" type="Label" parent="upgrades/Speed/speed_price"]
+offset_left = 11.25
+offset_top = 8.75
+offset_right = 109.25
+offset_bottom = 38.75
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_suimg")
+theme_override_font_sizes/font_size = 30
+text = "Price"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shop_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="shop_zone"]
+shape = SubResource("CircleShape2D_m36j2")
+
+[connection signal="pressed" from="upgrades/Helath/buy_health" to="." method="_on_buy_health_pressed"]
+[connection signal="pressed" from="upgrades/Helath/health_price" to="." method="_on_health_price_pressed"]
+[connection signal="pressed" from="upgrades/Damage/buy_damage" to="." method="_on_buy_damage_pressed"]
+[connection signal="pressed" from="upgrades/Damage/damage_price" to="." method="_on_damage_price_pressed"]
+[connection signal="pressed" from="upgrades/Speed/buy_speed" to="." method="_on_buy_speed_pressed"]
+[connection signal="pressed" from="upgrades/Speed/speed_price" to="." method="_on_speed_price_pressed"]
+[connection signal="body_entered" from="shop_zone" to="." method="_on_shop_zone_body_entered"]
+[connection signal="body_exited" from="shop_zone" to="." method="_on_shop_zone_body_exited"]

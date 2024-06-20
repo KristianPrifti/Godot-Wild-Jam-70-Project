@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqe0p8qxm6khe"]
+[gd_scene load_steps=8 format=3 uid="uid://cqe0p8qxm6khe"]
 
 [ext_resource type="TileSet" uid="uid://dyd4siua4n4bj" path="res://tile_set.tres" id="1_bt3k5"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_le36p"]
 [ext_resource type="PackedScene" uid="uid://ce1681knjeh47" path="res://skeleton.tscn" id="3_74s32"]
 [ext_resource type="PackedScene" uid="uid://b86glwof054wu" path="res://goblin.tscn" id="4_q7tuc"]
+[ext_resource type="PackedScene" uid="uid://c3006mys53cg1" path="res://shop.tscn" id="5_k080w"]
+[ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="6_giim8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vdm"]
 size = Vector2(50, 64)
@@ -45,5 +47,11 @@ position = Vector2(685, 765)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(1848, 453)
 shape = SubResource("RectangleShape2D_x8vdm")
+
+[node name="shop" parent="." instance=ExtResource("5_k080w")]
+position = Vector2(1568, 438)
+
+[node name="Player" parent="." instance=ExtResource("6_giim8")]
+position = Vector2(317, 547)
 
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
