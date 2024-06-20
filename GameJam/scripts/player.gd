@@ -13,6 +13,8 @@ var anim
 var is_atk: bool = false
 var is_taking_damage = false
 var is_dead
+var enemy_cooldown = true
+var enemy_range = false
 
 var health
 
@@ -110,21 +112,31 @@ func check_for_attack(a):
 
 
 func take_damage(damage):
-	health = health - damage
+	if enemy_range and enemy_cooldown:
+		
+		health = health - damage
+		enemy_cooldown = false
+		await get_tree().create_timer(1).timeout
+		enemy_cooldown = true
+		take_damage(1)
+		
 	if health <= 0:
 		is_dead = true
 	else:
 		is_taking_damage = true
 	
-
-
 func _on_hitbox_body_entered(body):
 	if body.has_method("goblin") && !body.dead:
+		enemy_range = true
 		take_damage(1)
 	elif body.has_method("skeleton") && !body.dead:
+		enemy_range = true
 		take_damage(1)
-
-
+func _on_hitbox_body_exited(body):
+	if body.has_method("goblin") && !body.dead:
+		enemy_range = false
+	elif body.has_method("skeleton") && !body.dead:
+		enemy_range = false
+		
 func player():
 	pass
-
