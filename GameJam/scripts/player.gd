@@ -11,10 +11,10 @@ var last_input_vector = Vector2(0,0)
 # animation variables
 var anim
 var is_atk: bool = false
-var is_taking_damage = false
-var is_dead
-var enemy_cooldown = true
-var enemy_range = false
+@export var is_taking_damage = false
+@export var is_dead = false
+@export var enemy_cooldown = true
+@export var enemy_range = false
 
 var health
 
@@ -25,10 +25,11 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if is_taking_damage:
+	if is_taking_damage && enemy_range:
 		animation_node.play("damaged")
 		await animation_node.animation_finished
 		is_taking_damage = false
+		pass
 	#-------------if player is dead---------------#
 	elif is_dead:
 		animation_node.play("death")
@@ -111,27 +112,31 @@ func check_for_attack(a):
 			return "attack_back"
 
 
-func take_damage(damage):
-	if enemy_range and enemy_cooldown:
-		
-		health = health - damage
-		enemy_cooldown = false
-		await get_tree().create_timer(1).timeout
-		enemy_cooldown = true
-		take_damage(1)
-		
+func take_damage(damage, enemy):
 	if health <= 0:
 		is_dead = true
 	else:
 		is_taking_damage = true
 	
+	if enemy_range and enemy_cooldown and enemy != null:
+		
+		health = health - damage
+		enemy_cooldown = false
+		await get_tree().create_timer(1).timeout
+		enemy_cooldown = true
+		take_damage(damage, enemy)
+	
+	if enemy == null:
+		enemy_range = false
+	
+	
 func _on_hitbox_body_entered(body):
 	if body.has_method("goblin") && !body.dead:
 		enemy_range = true
-		take_damage(1)
+		take_damage(1, body)
 	elif body.has_method("skeleton") && !body.dead:
 		enemy_range = true
-		take_damage(1)
+		take_damage(1, body)
 func _on_hitbox_body_exited(body):
 	if body.has_method("goblin") && !body.dead:
 		enemy_range = false

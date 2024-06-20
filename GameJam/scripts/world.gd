@@ -18,9 +18,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_node("CanvasLayer/stats/HP").text = "HP: " + str(GLOBAL.player.health)
-	get_node("CanvasLayer/stats/Gold").text = "Gold: " + str(GLOBAL.gold)
-	get_node("CanvasLayer/stats/Damage").text = "Damage: " + str(GLOBAL.damage)
+	if GLOBAL.player != null:
+		get_node("CanvasLayer/stats/HP").text = "HP: " + str(GLOBAL.player.health)
+		get_node("CanvasLayer/stats/Gold").text = "Gold: " + str(GLOBAL.gold)
+		get_node("CanvasLayer/stats/Damage").text = "Damage: " + str(GLOBAL.damage)
+	else:
+		$CanvasLayer.visible = false
 
 # function that loads the next scene
 func load_next_scene():
