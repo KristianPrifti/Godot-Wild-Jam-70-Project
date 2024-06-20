@@ -31,7 +31,7 @@ func _ready():
 # if the pkayer reaches the door they pass the level
 func _on_door_body_entered(body):
 	if body.name == "Player":
-		print("level passed")
+		GLOBAL.world.load_next_scene()
 
 
 func level():

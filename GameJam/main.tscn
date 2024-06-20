@@ -17,6 +17,7 @@ icon = ExtResource("2_44b8s")
 flat = true
 
 [node name="Label" type="Label" parent="play_button"]
+layout_mode = 0
 offset_left = 22.6667
 offset_top = 9.33333
 offset_right = 305.667
@@ -39,6 +40,7 @@ icon = ExtResource("2_44b8s")
 flat = true
 
 [node name="Label" type="Label" parent="quit_button"]
+layout_mode = 0
 offset_left = 18.6667
 offset_top = 9.33333
 offset_right = 336.667

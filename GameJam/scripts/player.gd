@@ -119,7 +119,9 @@ func take_damage(damage):
 
 
 func _on_hitbox_body_entered(body):
-	if body.has_method("enemy") && !body.dead:
+	if body.has_method("goblin") && !body.dead:
+		take_damage(1)
+	elif body.has_method("skeleton") && !body.dead:
 		take_damage(1)
 
 

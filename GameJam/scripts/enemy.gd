@@ -3,10 +3,10 @@ extends CharacterBody2D
 # keep track which direction it moves
 var direction
 # bounds
-var min_x = -1
-var min_y
-var max_x
-var max_y
+var min_x = 9999
+var min_y = 9999
+var max_x = 9999
+var max_y = 9999
 # keep track if enemy is dead
 var dead
 
@@ -52,6 +52,8 @@ func set_bounds(x1, y1, x2, y2):
 func set_health(h):
 	health = h
 
+func set_direction(d):
+	direction = d
 
 func enemy():
 	pass

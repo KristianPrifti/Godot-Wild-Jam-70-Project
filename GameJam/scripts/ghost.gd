@@ -64,6 +64,4 @@ func death(): # dies
 func ghost():
 	pass
 
-func enemy():
-	pass
 

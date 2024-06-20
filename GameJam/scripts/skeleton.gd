@@ -28,6 +28,8 @@ func death(): # dies
 	queue_free()
 
 
-func goblin():
+func skeleton():
 	pass
+
+
 

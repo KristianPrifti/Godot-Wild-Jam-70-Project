@@ -3,7 +3,9 @@ extends Node2D
 # array that keeps the scenes in order
 var scenes = [
 	preload("res://openning.tscn"),
-	preload("res://level_1.tscn")
+	preload("res://level_1.tscn"),
+	preload("res://openning.tscn"),
+	preload("res://level_2.tscn")
 ]
 var curr_scene
 var scene_count = 0
@@ -25,6 +27,7 @@ func load_next_scene():
 	curr_scene.queue_free()
 	scene_count += 1
 	var s = scenes[scene_count].instantiate()
+	curr_scene = s
 	add_child(s)
 	move_child(s, 0)
 	is_level(s)
