@@ -25,11 +25,9 @@ func death(): # dies
 	$AnimatedSprite2D.play("damaged")
 	await $AnimatedSprite2D.animation_finished
 	GLOBAL.get_gold(gold_to_give)
+	GLOBAL.rat_and_bat_killed += 1
 	queue_free()
 
 
-func skeleton():
+func bat():
 	pass
-
-
-

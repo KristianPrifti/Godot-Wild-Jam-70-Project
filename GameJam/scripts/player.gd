@@ -133,10 +133,15 @@ func _on_hitbox_body_entered(body):
 	elif body.has_method("skeleton") && !body.dead:
 		enemy_range = true
 		take_damage(1, body)
+	elif body.has_method("ghost") && !body.dead:
+		enemy_range = true
+		take_damage(1, body)
 func _on_hitbox_body_exited(body):
 	if body.has_method("goblin") && !body.dead:
 		enemy_range = false
 	elif body.has_method("skeleton") && !body.dead:
+		enemy_range = false
+	elif body.has_method("ghost") && !body.dead:
 		enemy_range = false
 		
 func player():

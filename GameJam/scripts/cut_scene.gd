@@ -11,17 +11,41 @@ var scene_1 = [
 	]
 
 var scene_2 = [
-	"Goblins are not the only monster hiding in the castle ...",
+	"Goblins are not the only monster hiding in the dungeon ...",
 	"Who knows what our hero will face next!"
 ]
 
 var scene_3 = [
-	"temp"
+	"Until now the warrior only faced monster ...",
+	"but not everyone in the dungeon wants to deal harm ...",
+	"some just want to get some value from their marketing degree. ...",
+	"Maybe the hero will benefit from some upgrades."
 ]
 
 var scene_4 = [
+	"The Dungeon of Doom is a mysterious place ...",
+	"You never know where a door could lead to ...",
+	"Our warrior should be carefull but sometimes you cannot avoid the risk!"
+]
+
+var scene_5 = [
+	"temp sdfwe cvsdf",
+	"temp fsfewfs",
 	"temp"
 ]
+
+var scene_6 = [
+	"temp sdfwe cvsdf",
+	"temp fsfewfs",
+	"temp"
+]
+
+var scene_7 = [
+	"temp sdfwe cvsdf",
+	"temp fsfewfs",
+	"temp"
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var scene
@@ -33,6 +57,12 @@ func _ready():
 		scene = scene_3
 	elif GLOBAL.cut_scene_counter == 4:
 		scene = scene_4
+	elif GLOBAL.cut_scene_counter == 5:
+		scene = scene_5
+	elif GLOBAL.cut_scene_counter == 6:
+		scene = scene_6
+	elif GLOBAL.cut_scene_counter == 7:
+		scene = scene_7
 	
 	GLOBAL.cut_scene_counter += 1
 	

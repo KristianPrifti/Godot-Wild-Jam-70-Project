@@ -1,0 +1,381 @@
+[gd_scene load_steps=21 format=3 uid="uid://10awb7tc6ati"]
+
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="1_4ki8c"]
+[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_70quh"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_h0ngq"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="2_b0nbc"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="5_esce3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
+atlas = ExtResource("1_70quh")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2r1"]
+atlas = ExtResource("1_70quh")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyl6k"]
+atlas = ExtResource("1_70quh")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsklb"]
+atlas = ExtResource("1_70quh")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m18q8"]
+atlas = ExtResource("1_70quh")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_585dw"]
+atlas = ExtResource("1_70quh")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0bi"]
+atlas = ExtResource("1_70quh")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clfml"]
+atlas = ExtResource("1_70quh")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06fxn"]
+atlas = ExtResource("1_70quh")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6guf"]
+atlas = ExtResource("1_70quh")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vn7m"]
+atlas = ExtResource("1_70quh")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24n7l"]
+atlas = ExtResource("1_70quh")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7mf"]
+atlas = ExtResource("1_70quh")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwfb"]
+atlas = ExtResource("1_70quh")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbc2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mae3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyl6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsklb")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m18q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_585dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clfml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06fxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6guf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vn7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24n7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdwfb")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[node name="credits" type="Node2D"]
+script = ExtResource("1_h0ngq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1999.0
+offset_bottom = 1155.0
+color = Color(0.227451, 0.25098, 0.254902, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1636, 297)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_rbc2w")
+animation = &"loop"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(743, 541)
+scale = Vector2(14.8667, 10)
+texture = ExtResource("1_4ki8c")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 223.0
+offset_top = 192.0
+offset_right = 1261.0
+offset_bottom = 870.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="credits" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="made_by" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Made By:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Kris"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Bryant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Jiahao"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="assets" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Assets (also links):"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s3" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Tiles and monsters by Toadzilla"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://toadzilla.itch.io/dungeons-pack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://toadzilla.itch.io/monster-pack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s4" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Warrior by Pupkin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label15" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://trevor-pupkin.itch.io/minimal-dungeon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Wizard by Warren Clack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://lionheart963.itch.io/wizard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Wooden gui by Narik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://soulofkiran.itch.io/pixel-art-wooden-gui-v1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s5" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label16" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 40
+text = "Dialogue file by TheBUFFED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label17" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "https://www.youtube.com/watch?v=Cp9g2GY7aTg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1467.0
+offset_top = 835.0
+offset_right = 1567.0
+offset_bottom = 874.0
+scale = Vector2(4, 4)
+icon = ExtResource("5_esce3")
+flat = true
+
+[node name="Label18" type="Label" parent="Button"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 9.25
+offset_right = 95.0
+offset_bottom = 35.25
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b0nbc")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

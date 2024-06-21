@@ -1,25 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://cj6oo3o8flu5t"]
+[gd_scene load_steps=15 format=3 uid="uid://cj6oo3o8flu5t"]
 
 [ext_resource type="Texture2D" uid="uid://drsd5l1s67f7j" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/characters/enemies/rat.png" id="1_i65ky"]
+[ext_resource type="Script" path="res://scripts/rat.gd" id="1_sjnxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0icwo"]
-radius = 24.1868
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ka8nq"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8psq"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(16, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lpps3"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(32, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_44vyw"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(48, 80, 16, 16)
+radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmjfw"]
 atlas = ExtResource("1_i65ky")
@@ -37,14 +22,6 @@ region = Rect2(32, 64, 16, 16)
 atlas = ExtResource("1_i65ky")
 region = Rect2(48, 64, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cp4xk"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_07iab"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(16, 16, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1qqe"]
 atlas = ExtResource("1_i65ky")
 region = Rect2(0, 0, 16, 16)
@@ -52,18 +29,6 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_460st"]
 atlas = ExtResource("1_i65ky")
 region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rta10"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uncdk"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(16, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_54nn7"]
-atlas = ExtResource("1_i65ky")
-region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8k8o"]
 atlas = ExtResource("1_i65ky")
@@ -81,23 +46,6 @@ region = Rect2(32, 32, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ka8nq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m8psq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lpps3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_44vyw")
-}],
-"loop": true,
-"name": &"damaged_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_dmjfw")
 }, {
 "duration": 1.0,
@@ -109,19 +57,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x5yi1")
 }],
-"loop": true,
-"name": &"damaged_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cp4xk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_07iab")
-}],
-"loop": true,
-"name": &"idle_left",
+"loop": false,
+"name": &"damaged",
 "speed": 5.0
 }, {
 "frames": [{
@@ -132,21 +69,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_460st")
 }],
 "loop": true,
-"name": &"idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rta10")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uncdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_54nn7")
-}],
-"loop": true,
-"name": &"run_left",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -160,13 +83,17 @@ animations = [{
 "texture": SubResource("AtlasTexture_g0yvb")
 }],
 "loop": true,
-"name": &"run_right",
+"name": &"run",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hiva1"]
+radius = 35.0
 
 [node name="Rat" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_sjnxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0icwo")
@@ -175,5 +102,11 @@ shape = SubResource("CircleShape2D_0icwo")
 position = Vector2(0, -7)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_xykyw")
-animation = &"damaged_left"
-frame_progress = 0.238697
+animation = &"damaged"
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_hiva1")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

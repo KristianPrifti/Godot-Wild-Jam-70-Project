@@ -14,7 +14,16 @@ var health_lv
 var damage_lv
 var speed_lv
 
+var rat_and_bat_killed
+
 func _ready():
+	restart()
+
+func get_gold(g):
+	gold += g
+
+# set values to their default
+func restart():
 	gold = 0
 	
 	health = 10
@@ -24,6 +33,5 @@ func _ready():
 	health_lv = 1
 	damage_lv = 1
 	speed_lv = 1
-
-func get_gold(g):
-	gold += g
+	
+	rat_and_bat_killed = 0
