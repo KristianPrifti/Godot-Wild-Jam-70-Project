@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://c3006mys53cg1"]
 
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_kor2k"]
 [ext_resource type="Texture2D" uid="uid://b67hsejvr5yew" path="res://assets/wizard_idle-removebg-preview.png" id="1_w2wa5"]
-[ext_resource type="Script" path="res://shop.gd" id="1_yifoe"]
 [ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_dfj4p"]
 [ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="3_suimg"]
 [ext_resource type="Texture2D" uid="uid://cj4d1vr6q0yk4" path="res://assets/Wooden Icon Health.png" id="4_hg56a"]
@@ -63,7 +63,7 @@ load_path = "res://.godot/imported/Wooden Button.png-3de5d472a49998455c3a6cadda7
 radius = 98.326
 
 [node name="shop" type="CharacterBody2D"]
-script = ExtResource("1_yifoe")
+script = ExtResource("1_kor2k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 0)
@@ -115,11 +115,12 @@ icon = ExtResource("5_sclrw")
 flat = true
 
 [node name="Label" type="Label" parent="upgrades/Helath/health_price"]
-offset_left = 11.25
-offset_top = 8.75
-offset_right = 109.25
-offset_bottom = 38.75
-scale = Vector2(0.8, 0.8)
+layout_mode = 0
+offset_left = 5.83334
+offset_top = 10.2083
+offset_right = 162.833
+offset_bottom = 40.2083
+scale = Vector2(0.55, 0.55)
 theme_override_fonts/font = ExtResource("3_suimg")
 theme_override_font_sizes/font_size = 30
 text = "Price"
@@ -163,11 +164,12 @@ icon = SubResource("CompressedTexture2D_pf7ao")
 flat = true
 
 [node name="Label" type="Label" parent="upgrades/Damage/damage_price"]
-offset_left = 11.25
-offset_top = 8.75
-offset_right = 109.25
-offset_bottom = 38.75
-scale = Vector2(0.8, 0.8)
+layout_mode = 0
+offset_left = 7.29166
+offset_top = 10.2083
+offset_right = 164.292
+offset_bottom = 40.2083
+scale = Vector2(0.55, 0.55)
 theme_override_fonts/font = ExtResource("3_suimg")
 theme_override_font_sizes/font_size = 30
 text = "Price"
@@ -211,11 +213,12 @@ icon = SubResource("CompressedTexture2D_tvvi1")
 flat = true
 
 [node name="Label" type="Label" parent="upgrades/Speed/speed_price"]
-offset_left = 11.25
-offset_top = 8.75
-offset_right = 109.25
-offset_bottom = 38.75
-scale = Vector2(0.8, 0.8)
+layout_mode = 0
+offset_left = 5.62499
+offset_top = 10.2083
+offset_right = 165.625
+offset_bottom = 40.2083
+scale = Vector2(0.55, 0.55)
 theme_override_fonts/font = ExtResource("3_suimg")
 theme_override_font_sizes/font_size = 30
 text = "Price"
@@ -225,6 +228,7 @@ vertical_alignment = 1
 [node name="shop_zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="shop_zone"]
+visible = false
 shape = SubResource("CircleShape2D_m36j2")
 
 [connection signal="pressed" from="upgrades/Helath/buy_health" to="." method="_on_buy_health_pressed"]

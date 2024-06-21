@@ -2,11 +2,15 @@ extends Node2D
 
 # array that keeps the scenes in order
 var scenes = [
-	preload("res://openning.tscn"),
+	preload("res://cut_scene.tscn"),
 	preload("res://level_1.tscn"),
-	preload("res://openning.tscn"),
-	preload("res://level_2.tscn")
+	preload("res://cut_scene.tscn"),
+	preload("res://level_2.tscn"),
+	preload("res://cut_scene.tscn"),
+	preload("res://level_3.tscn"),
+	preload("res://cut_scene.tscn"),
 ]
+
 var curr_scene
 var scene_count = 0
 
@@ -19,7 +23,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GLOBAL.player != null:
-		get_node("CanvasLayer/stats/HP").text = "HP: " + str(GLOBAL.player.health)
+		get_node("CanvasLayer/stats/HP").text = "HP: " + str(GLOBAL.health)
 		get_node("CanvasLayer/stats/Gold").text = "Gold: " + str(GLOBAL.gold)
 		get_node("CanvasLayer/stats/Damage").text = "Damage: " + str(GLOBAL.damage)
 	else:

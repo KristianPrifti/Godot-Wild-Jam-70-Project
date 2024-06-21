@@ -1,5 +1,7 @@
 extends Node
 
+var cut_scene_counter = 1
+
 var world
 var player
 var gold

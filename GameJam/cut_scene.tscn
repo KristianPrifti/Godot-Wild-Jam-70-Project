@@ -1,66 +1,66 @@
 [gd_scene load_steps=22 format=3 uid="uid://baw4e7tr1w1ua"]
 
-[ext_resource type="Script" path="res://scripts/openning.gd" id="1_3pxf6"]
-[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_4cu6v"]
-[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_yw45t"]
-[ext_resource type="PackedScene" uid="uid://dle10xdd3u2ou" path="res://dialogue.tscn" id="3_5vc0p"]
-[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="5_i5v53"]
-[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="6_mwkw7"]
+[ext_resource type="Script" path="res://scripts/cut_scene.gd" id="1_tdjaw"]
+[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="2_g8eqi"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="3_ov2lo"]
+[ext_resource type="PackedScene" uid="uid://dle10xdd3u2ou" path="res://dialogue.tscn" id="4_yie2a"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="5_6loqu"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="6_pn2v2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(480, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8v2r1"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(560, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dyl6k"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(640, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsklb"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(720, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m18q8"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(0, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_585dw"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(80, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke0bi"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(160, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_clfml"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(240, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06fxn"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(320, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6guf"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(400, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vn7m"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(480, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24n7l"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(560, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0o7mf"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(640, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdwfb"]
-atlas = ExtResource("1_4cu6v")
+atlas = ExtResource("2_g8eqi")
 region = Rect2(720, 0, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j3uvk"]
@@ -118,8 +118,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Openning" type="Node2D"]
-script = ExtResource("1_3pxf6")
+[node name="cut_scene" type="Node2D"]
+script = ExtResource("1_tdjaw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1999.0
@@ -136,9 +136,9 @@ frame_progress = 0.574194
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(962, 449)
 scale = Vector2(10, 7)
-texture = ExtResource("2_yw45t")
+texture = ExtResource("3_ov2lo")
 
-[node name="Dialogue" parent="Sprite2D" instance=ExtResource("3_5vc0p")]
+[node name="Dialogue" parent="Sprite2D" instance=ExtResource("4_yie2a")]
 scale = Vector2(0.1, 0.142857)
 
 [node name="Button" type="Button" parent="."]
@@ -147,7 +147,7 @@ offset_top = 750.0
 offset_right = 1051.0
 offset_bottom = 789.0
 scale = Vector2(4, 4)
-icon = ExtResource("5_i5v53")
+icon = ExtResource("5_6loqu")
 flat = true
 
 [node name="Label" type="Label" parent="Button"]
@@ -156,7 +156,7 @@ offset_right = 100.0
 offset_bottom = 39.0
 theme_override_colors/font_color = Color(0.721899, 0.235234, 0.292506, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_mwkw7")
+theme_override_fonts/font = ExtResource("6_pn2v2")
 text = "Next"
 horizontal_alignment = 1
 vertical_alignment = 1
