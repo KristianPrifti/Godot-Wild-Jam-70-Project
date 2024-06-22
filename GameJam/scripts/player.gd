@@ -129,8 +129,6 @@ func take_damage(damage, enemy):
 	
 	if boss_range and enemy_cooldown and enemy != null:
 		
-		print("boss")
-		
 		GLOBAL.health = GLOBAL.health - damage
 		enemy_cooldown = false
 		await get_tree().create_timer(1).timeout
@@ -144,7 +142,6 @@ func take_damage(damage, enemy):
 	
 func _on_hitbox_body_entered(body):
 	if body.has_method("goblin") && !body.dead:
-		print("golbin entered")
 		enemy_range = true
 		take_damage(1, body)
 	elif body.has_method("skeleton") && !body.dead:
@@ -154,7 +151,6 @@ func _on_hitbox_body_entered(body):
 		enemy_range = true
 		take_damage(1, body)
 	elif body.has_method("Slime") && !body.dead:
-		print("boss entered")
 		boss_range = true
 		take_damage(2, body)
 		

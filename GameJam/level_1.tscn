@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_tr2q6"]
 [ext_resource type="TileSet" uid="uid://dyd4siua4n4bj" path="res://tile_set.tres" id="2_rksa5"]
-[ext_resource type="PackedScene" uid="uid://cyr115xssb2in" path="res://Slime.tscn" id="4_jfy54"]
+[ext_resource type="PackedScene" path="res://Slime.tscn" id="4_jfy54"]
 [ext_resource type="PackedScene" uid="uid://b86glwof054wu" path="res://goblin.tscn" id="5_jw2wa"]
 [ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="6_ux0dt"]
 [ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="7_wyvh3"]
