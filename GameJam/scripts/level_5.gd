@@ -60,5 +60,12 @@ func _on_timer_timeout():
 func _on_timer_2_timeout():
 	spawn_bat()
 
+func _on_door_body_entered(body):
+	if body.name == "Player":
+		GLOBAL.world.load_next_scene()
+
 func level():
 	pass
+
+
+

@@ -7,7 +7,6 @@ var scene_1 = [
 		"he goes on an advanture to the Dungeon of Doom to find the mistical axe ...",
 		"but what fate awaits him!",
 		"OOOooooooooOOOoooOOO!!!!!!",
-		"(Don't mind the mid story telling, we ran out of time and budget)"
 	]
 
 var scene_2 = [
@@ -18,7 +17,7 @@ var scene_2 = [
 var scene_3 = [
 	"Until now the warrior only faced monster ...",
 	"but not everyone in the dungeon wants to deal harm ...",
-	"some just want to get some value from their marketing degree. ...",
+	"some just want to get some value out of their marketing degree. ...",
 	"Maybe the hero will benefit from some upgrades."
 ]
 
@@ -29,15 +28,15 @@ var scene_4 = [
 ]
 
 var scene_5 = [
-	"temp sdfwe cvsdf",
-	"temp fsfewfs",
-	"temp"
+	"The Dungeon of Doom is full of creatures ...",
+	"some of them just move from room to room and deal no harm ...",
+	"... that doesn't mean they don't carry some sweet gold tho."
 ]
 
 var scene_6 = [
-	"temp sdfwe cvsdf",
-	"temp fsfewfs",
-	"temp"
+	"The warrior learns that his actions have consequances ...",
+	"the ghosts of the innocent rats and bats that he killed for his own benefit have come for revange ...",
+	"Will our hero be able to get out of this mess or did he defeat a few to many bystandarts in the previous flor!"
 ]
 
 var scene_7 = [

@@ -204,8 +204,9 @@ offset_bottom = 877.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_ds818")
 theme_override_font_sizes/font_size = 50
-text = "The warrior manages to find the mistical axe 
-and hopefully you learned something through his adventure!"
+text = "That was a taugh adventure but after a lot of hard work the warrior manages to find the mistical axe !
+
+The END"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -1,13 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkvjowt648v0w"]
+[gd_scene load_steps=20 format=3 uid="uid://dkvjowt648v0w"]
 
-[ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_4ujhr"]
-[ext_resource type="Texture2D" uid="uid://bpwnq5htnohe1" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/surground.png" id="2_ibumn"]
-[ext_resource type="Texture2D" uid="uid://tnt2e2i2668g" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/walls.png" id="3_lxhd0"]
-[ext_resource type="Texture2D" uid="uid://bpqvdx8qtejsi" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/props.png" id="4_fqfxp"]
-[ext_resource type="Texture2D" uid="uid://cwx0vifjg0ypt" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/animated_props.png" id="5_81r8c"]
+[ext_resource type="Script" path="res://scripts/level_6.gd" id="1_3cltf"]
+[ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_miuld"]
+[ext_resource type="Texture2D" uid="uid://bpwnq5htnohe1" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/surground.png" id="2_e63o5"]
+[ext_resource type="Texture2D" uid="uid://tnt2e2i2668g" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/walls.png" id="3_vfh1x"]
+[ext_resource type="Texture2D" uid="uid://bpqvdx8qtejsi" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/props.png" id="4_3b5r6"]
+[ext_resource type="Texture2D" uid="uid://cwx0vifjg0ypt" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/animated_props.png" id="5_a4pvh"]
+[ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="7_2nab8"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="8_xhh34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrtbp"]
-texture = ExtResource("1_4ujhr")
+texture = ExtResource("1_miuld")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -595,7 +598,7 @@ texture = ExtResource("1_4ujhr")
 11:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxge5"]
-texture = ExtResource("2_ibumn")
+texture = ExtResource("2_e63o5")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -934,7 +937,7 @@ texture = ExtResource("2_ibumn")
 3:13/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5nkr"]
-texture = ExtResource("3_lxhd0")
+texture = ExtResource("3_vfh1x")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1386,7 +1389,7 @@ texture = ExtResource("3_lxhd0")
 12:11/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ytd2"]
-texture = ExtResource("4_fqfxp")
+texture = ExtResource("4_3b5r6")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1518,7 +1521,7 @@ texture = ExtResource("4_fqfxp")
 2:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r6w1"]
-texture = ExtResource("5_81r8c")
+texture = ExtResource("5_a4pvh")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1736,7 +1739,7 @@ sources/3 = SubResource("TileSetAtlasSource_2ytd2")
 sources/4 = SubResource("TileSetAtlasSource_4r6w1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ese4t"]
-texture = ExtResource("4_fqfxp")
+texture = ExtResource("4_3b5r6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1782,7 +1785,7 @@ texture = ExtResource("4_fqfxp")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm16i"]
-texture = ExtResource("5_81r8c")
+texture = ExtResource("5_a4pvh")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1857,7 +1860,14 @@ texture = ExtResource("5_81r8c")
 sources/0 = SubResource("TileSetAtlasSource_ese4t")
 sources/1 = SubResource("TileSetAtlasSource_vm16i")
 
-[node name="level_0" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peh0f"]
+size = Vector2(72, 36)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j4x2w"]
+load_path = "res://.godot/imported/Wooden Board.png-28f920663fef330cd08a1b3441fd9511.ctex"
+
+[node name="level_6" type="Node2D"]
+script = ExtResource("1_3cltf")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
@@ -1870,3 +1880,43 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_igupd")
 format = 2
 layer_0/tile_data = PackedInt32Array(131109, 0, 3, 1310756, 131072, 4, 1310755, 65536, 4, 131074, 196608, 1, 131075, 262145, 0, 1310757, 131072, 4, 1245221, 196608, 3, 1245220, 196608, 3, 1310754, 196608, 3)
+
+[node name="door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(360, 30)
+shape = SubResource("RectangleShape2D_peh0f")
+
+[node name="Player" parent="." instance=ExtResource("7_2nab8")]
+position = Vector2(318, 167)
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="ghost_text" type="Sprite2D" parent="."]
+position = Vector2(145, 953)
+scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_j4x2w")
+
+[node name="Label" type="Label" parent="ghost_text"]
+anchors_preset = -1
+anchor_left = 0.0111111
+anchor_right = 1.82222
+anchor_bottom = 1.58511
+offset_left = -40.6667
+offset_top = -38.3333
+offset_right = 35.3333
+offset_bottom = 35.6667
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_xhh34")
+theme_override_font_sizes/font_size = 30
+text = "Ghosts:
+HP: 2
+Damage: 1
+GoldDrop: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

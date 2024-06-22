@@ -72,7 +72,7 @@ radius = 19.0263
 radius = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m4rp"]
-radius = 92.5419
+radius = 200.0
 
 [node name="ghost" type="CharacterBody2D"]
 collision_layer = 4
