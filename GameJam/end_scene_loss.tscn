@@ -1,0 +1,176 @@
+[gd_scene load_steps=21 format=3 uid="uid://cddbwjtx3gmvu"]
+
+[ext_resource type="Script" path="res://scripts/end_scene_loss.gd" id="1_gnk3q"]
+[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_xlsvc"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_f0ax4"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="3_x04bk"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="4_kvmhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2r1"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyl6k"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsklb"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m18q8"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_585dw"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0bi"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clfml"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06fxn"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6guf"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vn7m"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24n7l"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7mf"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwfb"]
+atlas = ExtResource("1_xlsvc")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kko37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mae3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyl6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsklb")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m18q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_585dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clfml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06fxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6guf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vn7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24n7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdwfb")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[node name="end_scene_loss" type="Node2D"]
+script = ExtResource("1_gnk3q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1999.0
+offset_bottom = 1155.0
+color = Color(0.227451, 0.25098, 0.254902, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1636, 297)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_kko37")
+animation = &"loop"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(743, 541)
+scale = Vector2(14.8667, 10)
+texture = ExtResource("2_f0ax4")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1467.0
+offset_top = 835.0
+offset_right = 1567.0
+offset_bottom = 874.0
+scale = Vector2(4, 4)
+icon = ExtResource("3_x04bk")
+flat = true
+
+[node name="Label18" type="Label" parent="Button"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 9.25
+offset_right = 95.0
+offset_bottom = 35.25
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kvmhh")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 191.0
+offset_right = 1277.0
+offset_bottom = 877.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kvmhh")
+theme_override_font_sizes/font_size = 50
+text = "The worrior might have lost the battle but hopefully you learned something along the way. 
+Go back and try again, maybe the ending will be diffrernt next time!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

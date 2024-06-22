@@ -24,6 +24,14 @@ func get_gold(g):
 
 # set values to their default
 func restart():
+	
+	cut_scene_counter = 1
+
+	if world != null:
+		world.queue_free()
+	if player != null:
+		player.queue_free()
+	
 	gold = 0
 	
 	health = 10
@@ -35,3 +43,7 @@ func restart():
 	speed_lv = 1
 	
 	rat_and_bat_killed = 0
+
+
+func end_game():
+	get_tree().change_scene_to_file("res://end_scene_loss.tscn")

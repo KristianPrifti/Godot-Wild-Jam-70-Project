@@ -1,0 +1,220 @@
+[gd_scene load_steps=27 format=3 uid="uid://41fhf0kcjydh"]
+
+[ext_resource type="Texture2D" uid="uid://bjvjw3xen5ua0" path="res://assets/wizard idle.png" id="1_clll1"]
+[ext_resource type="Script" path="res://scripts/end_scene_win.gd" id="1_hts77"]
+[ext_resource type="Texture2D" uid="uid://c2cbvvysmfaid" path="res://assets/Wooden Board.png" id="2_yw4kw"]
+[ext_resource type="Texture2D" uid="uid://ha64bx8fotqh" path="res://assets/Wooden Button.png" id="3_rfes5"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="4_ds818"]
+[ext_resource type="Texture2D" uid="uid://b1obdrik5jki0" path="res://assets/dwarf golden axe.png" id="6_h2xr4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae3t"]
+atlas = ExtResource("1_clll1")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2r1"]
+atlas = ExtResource("1_clll1")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyl6k"]
+atlas = ExtResource("1_clll1")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsklb"]
+atlas = ExtResource("1_clll1")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m18q8"]
+atlas = ExtResource("1_clll1")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_585dw"]
+atlas = ExtResource("1_clll1")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0bi"]
+atlas = ExtResource("1_clll1")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clfml"]
+atlas = ExtResource("1_clll1")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06fxn"]
+atlas = ExtResource("1_clll1")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6guf"]
+atlas = ExtResource("1_clll1")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vn7m"]
+atlas = ExtResource("1_clll1")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24n7l"]
+atlas = ExtResource("1_clll1")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7mf"]
+atlas = ExtResource("1_clll1")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwfb"]
+atlas = ExtResource("1_clll1")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffrak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mae3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyl6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsklb")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m18q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_585dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clfml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06fxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6guf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vn7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24n7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdwfb")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeuno"]
+atlas = ExtResource("6_h2xr4")
+region = Rect2(0, 0, 128, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85mjg"]
+atlas = ExtResource("6_h2xr4")
+region = Rect2(128, 0, 128, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh6y0"]
+atlas = ExtResource("6_h2xr4")
+region = Rect2(256, 0, 128, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bgvl"]
+atlas = ExtResource("6_h2xr4")
+region = Rect2(384, 0, 128, 119)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpcaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeuno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85mjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh6y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bgvl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="end_scene_win" type="Node2D"]
+script = ExtResource("1_hts77")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1999.0
+offset_bottom = 1155.0
+color = Color(0.227451, 0.25098, 0.254902, 1)
+
+[node name="wiz" type="AnimatedSprite2D" parent="."]
+position = Vector2(1636, 297)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_ffrak")
+animation = &"loop"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(743, 541)
+scale = Vector2(14.8667, 10)
+texture = ExtResource("2_yw4kw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1467.0
+offset_top = 835.0
+offset_right = 1567.0
+offset_bottom = 874.0
+scale = Vector2(4, 4)
+icon = ExtResource("3_rfes5")
+flat = true
+
+[node name="Label18" type="Label" parent="Button"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 9.25
+offset_right = 95.0
+offset_bottom = 35.25
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ds818")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 191.0
+offset_right = 1277.0
+offset_bottom = 877.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ds818")
+theme_override_font_sizes/font_size = 50
+text = "The warrior manages to find the mistical axe 
+and hopefully you learned something through his adventure!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="warrior" type="AnimatedSprite2D" parent="."]
+position = Vector2(1795, 737)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_cpcaj")
+animation = &"attack"
+flip_h = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

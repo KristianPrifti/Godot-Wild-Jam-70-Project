@@ -57,3 +57,5 @@ func is_level(s):
 	else:
 		$Player.visible = false
 		$CanvasLayer.visible = false
+
+

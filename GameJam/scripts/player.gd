@@ -30,6 +30,7 @@ func _physics_process(delta):
 	elif is_dead:
 		animation_node.play("death")
 		await animation_node.animation_finished
+		GLOBAL.end_game()
 		queue_free()
 	elif !is_atk:
 		input_vector = Vector2.ZERO
