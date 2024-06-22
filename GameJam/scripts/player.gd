@@ -14,6 +14,7 @@ var is_atk: bool = false
 @export var is_dead = false
 @export var enemy_cooldown = true
 @export var enemy_range = false
+@export var boss_range = false
 
 func _ready():
 	GLOBAL.player = self
@@ -123,12 +124,24 @@ func take_damage(damage, enemy):
 		enemy_cooldown = true
 		take_damage(damage, enemy)
 	
+	if boss_range and enemy_cooldown and enemy != null:
+		
+		print("boss")
+		
+		GLOBAL.health = GLOBAL.health - damage
+		enemy_cooldown = false
+		await get_tree().create_timer(1).timeout
+		enemy_cooldown = true
+		take_damage(damage, enemy)
+		
+	
 	if enemy == null:
 		enemy_range = false
 	
 	
 func _on_hitbox_body_entered(body):
 	if body.has_method("goblin") && !body.dead:
+		print("golbin entered")
 		enemy_range = true
 		take_damage(1, body)
 	elif body.has_method("skeleton") && !body.dead:
@@ -137,6 +150,11 @@ func _on_hitbox_body_entered(body):
 	elif body.has_method("ghost") && !body.dead:
 		enemy_range = true
 		take_damage(1, body)
+	elif body.has_method("Slime") && !body.dead:
+		print("boss entered")
+		boss_range = true
+		take_damage(2, body)
+		
 func _on_hitbox_body_exited(body):
 	if body.has_method("goblin") && !body.dead:
 		enemy_range = false
@@ -144,6 +162,8 @@ func _on_hitbox_body_exited(body):
 		enemy_range = false
 	elif body.has_method("ghost") && !body.dead:
 		enemy_range = false
+	elif body.has_method("Slime") && !body.dead:
+		boss_range = false
 		
 func player():
 	pass
