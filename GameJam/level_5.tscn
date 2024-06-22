@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjh06t852i7rh"]
+[gd_scene load_steps=9 format=3 uid="uid://bjh06t852i7rh"]
 
 [ext_resource type="Script" path="res://scripts/level_5.gd" id="1_km2yk"]
 [ext_resource type="TileSet" uid="uid://dyd4siua4n4bj" path="res://tile_set.tres" id="1_rw5d0"]
 [ext_resource type="PackedScene" uid="uid://c3006mys53cg1" path="res://shop.tscn" id="3_s8ut7"]
+[ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="4_3fkpg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlqf1"]
 size = Vector2(36, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66jku"]
 size = Vector2(36, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13owt"]
+size = Vector2(47, 63)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_141oy"]
+load_path = "res://.godot/imported/Wooden Board.png-28f920663fef330cd08a1b3441fd9511.ctex"
 
 [node name="level_5" type="Node2D"]
 script = ExtResource("1_km2yk")
@@ -56,7 +63,41 @@ autostart = true
 wait_time = 3.0
 autostart = true
 
+[node name="door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(1845.5, 790.5)
+shape = SubResource("RectangleShape2D_13owt")
+
+[node name="bat_and_rat_text" type="Sprite2D" parent="."]
+position = Vector2(301, 812)
+scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_141oy")
+
+[node name="Label" type="Label" parent="bat_and_rat_text"]
+anchors_preset = -1
+anchor_left = 0.0111111
+anchor_right = 1.82222
+anchor_bottom = 1.58511
+offset_left = -40.6667
+offset_top = -38.3333
+offset_right = 35.3333
+offset_bottom = 35.6667
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3fkpg")
+theme_override_font_sizes/font_size = 30
+text = "Bat / Rat:
+HP: 1
+Damage: 0
+GoldDrop: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

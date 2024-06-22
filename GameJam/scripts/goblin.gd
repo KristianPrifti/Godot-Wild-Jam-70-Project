@@ -1,6 +1,6 @@
 extends "res://scripts/enemy.gd"
 
-var gold_to_give = 2
+var gold_to_give = 5
 
 func _ready():
 	dead = false #sets the dead varibles to false as the game launches

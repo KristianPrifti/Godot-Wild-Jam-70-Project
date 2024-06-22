@@ -111,6 +111,7 @@ func check_for_attack(a):
 
 func take_damage(damage, enemy):
 	if GLOBAL.health <= 0:
+		GLOBAL.health = 0
 		is_dead = true
 	else:
 		is_taking_damage = true
@@ -118,6 +119,8 @@ func take_damage(damage, enemy):
 	if enemy_range and enemy_cooldown and enemy != null:
 		
 		GLOBAL.health = GLOBAL.health - damage
+		if GLOBAL.health < 0:
+			GLOBAL.health = 0
 		enemy_cooldown = false
 		await get_tree().create_timer(1).timeout
 		enemy_cooldown = true
