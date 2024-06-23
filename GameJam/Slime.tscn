@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cyr115xssb2in"]
 
 [ext_resource type="Texture2D" uid="uid://cx6k8sy6223n8" path="res://assets/SGQ_Enemies_v1_0_0/SGQ_Enemies/bosses/slime_king.png" id="1_q2o2r"]
-[ext_resource type="Script" path="res://Slime.gd" id="1_qofik"]
+[ext_resource type="Script" path="res://scripts/Slime.gd" id="1_qofik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5sg6m"]
 atlas = ExtResource("1_q2o2r")
