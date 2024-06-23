@@ -40,9 +40,16 @@ var scene_6 = [
 ]
 
 var scene_7 = [
-	"temp sdfwe cvsdf",
-	"temp fsfewfs",
-	"temp"
+	"Emmmm...",
+	"We knew the dungeon was difficult to get around but this is ridiculous ...",
+	"... A whole maze, will the hero be able to find a way out ?!"
+]
+
+var scene_8 = [
+	"Pesonally I had my doubts but it looks like the warrior made it through the maze ...",
+	"Just one more challange for him to face ...",
+	"Defeating the Slime King. ...",
+	"Then the mistical axe will be held by a true hero!"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -62,6 +69,8 @@ func _ready():
 		scene = scene_6
 	elif GLOBAL.cut_scene_counter == 7:
 		scene = scene_7
+	elif GLOBAL.cut_scene_counter == 8:
+		scene = scene_8
 	
 	GLOBAL.cut_scene_counter += 1
 	

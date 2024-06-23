@@ -14,6 +14,8 @@ var scenes = [
 	preload("res://level_5.tscn"),
 	preload("res://cut_scene.tscn"),
 	preload("res://level_6.tscn"),
+	preload("res://cut_scene.tscn"),
+	preload("res://level_7.tscn"),
 ]
 
 var curr_scene

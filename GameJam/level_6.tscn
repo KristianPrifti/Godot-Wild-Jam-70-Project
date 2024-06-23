@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkvjowt648v0w"]
+[gd_scene load_steps=19 format=3 uid="uid://dkvjowt648v0w"]
 
 [ext_resource type="Script" path="res://scripts/level_6.gd" id="1_3cltf"]
 [ext_resource type="Texture2D" uid="uid://dtdrpst70opol" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/grounds.png" id="1_miuld"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://tnt2e2i2668g" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/grounds_and_walls/walls.png" id="3_vfh1x"]
 [ext_resource type="Texture2D" uid="uid://bpqvdx8qtejsi" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/props.png" id="4_3b5r6"]
 [ext_resource type="Texture2D" uid="uid://cwx0vifjg0ypt" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/props/animated_props.png" id="5_a4pvh"]
-[ext_resource type="PackedScene" uid="uid://eywy18nlxka" path="res://player.tscn" id="7_2nab8"]
 [ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="8_xhh34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrtbp"]
@@ -1886,9 +1885,6 @@ layer_0/tile_data = PackedInt32Array(131109, 0, 3, 1310756, 131072, 4, 1310755, 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(360, 30)
 shape = SubResource("RectangleShape2D_peh0f")
-
-[node name="Player" parent="." instance=ExtResource("7_2nab8")]
-position = Vector2(318, 167)
 
 [node name="enemies" type="Node2D" parent="."]
 
