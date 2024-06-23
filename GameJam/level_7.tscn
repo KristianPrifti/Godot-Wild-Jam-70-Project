@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ggbvdh6eknc"]
+[gd_scene load_steps=12 format=3 uid="uid://d3ggbvdh6eknc"]
 
 [ext_resource type="Script" path="res://scripts/level_7.gd" id="1_8umj8"]
 [ext_resource type="TileSet" uid="uid://dyd4siua4n4bj" path="res://tile_set.tres" id="1_r25y2"]
 [ext_resource type="PackedScene" uid="uid://d1ybh1x5d4q1v" path="res://ghost.tscn" id="5_fnqox"]
-[ext_resource type="PackedScene" uid="uid://c3006mys53cg1" path="res://shop.tscn" id="8_kkcps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igu4q"]
 size = Vector2(45, 43)
@@ -57,11 +56,6 @@ position = Vector2(648, 691)
 
 [node name="ghost4" parent="enemies" instance=ExtResource("5_fnqox")]
 position = Vector2(1542, 505)
-
-[node name="shop" parent="." instance=ExtResource("8_kkcps")]
-position = Vector2(1661, 872)
-collision_layer = 8
-collision_mask = 0
 
 [node name="door1" type="Area2D" parent="."]
 

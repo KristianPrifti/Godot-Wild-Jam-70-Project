@@ -15,8 +15,6 @@ func _ready():
 	if GLOBAL.player != null:
 		GLOBAL.player.position = player_pos
 	
-	# flip emeny in the right direction
-	$shop.get_node("AnimatedSprite2D").flip_h = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

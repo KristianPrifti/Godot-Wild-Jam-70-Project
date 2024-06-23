@@ -47,3 +47,6 @@ func restart():
 
 func end_game():
 	get_tree().change_scene_to_file("res://end_scene_loss.tscn")
+
+func end_game_w():
+	get_tree().change_scene_to_file("res://end_scene_win.tscn")

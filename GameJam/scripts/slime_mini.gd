@@ -2,56 +2,67 @@ extends CharacterBody2D
 
 '''Enemy movement varibles'''
 
-var speed = 100
+var speed = 50
 var player_in_range = false
 var player = null
 
 '''Enemy Combat Varible'''
 
-var health = 50
+var health = 1
 var dead = false
 
+var anim
 
 func _ready():
 	dead = false #sets the dead varibles to false as the game launches
-	
+	var rng = RandomNumberGenerator.new()
+	var ran = rng.randi_range(1, 2)
+	if ran == 1:
+		anim = $AnimatedSprite2D
+		$AnimatedSprite2D2.visible = false
+		$AnimatedSprite2D.visible = true
+	elif ran == 2:
+		anim = $AnimatedSprite2D2
+		$AnimatedSprite2D.visible = false
+		$AnimatedSprite2D2.visible = true
+
 '''Enemy Movement'''	
 func _physics_process(delta):
 	if !dead:
 		# flip in the correct direction
 		if GLOBAL.player.position.x < self.position.x:
-			$AnimatedSprite2D.flip_h = true
+			anim.flip_h = true
 		else:
-			$AnimatedSprite2D.flip_h = false
+			anim.flip_h = false
 			
-		$"detection"/CollisionShape2D.disabled = false #if the enemy is not dead, do not disable thier detection zone
-		$"hitbox"/CollisionShape2D.disabled = false
+		$"detection_ms"/CollisionShape2D.disabled = false #if the enemy is not dead, do not disable thier detection zone
+		$"hitbox_ms"/CollisionShape2D.disabled = false
 		if player_in_range && (self.get_global_position() - player.get_global_position()).length()  > 70 : #if the player is in range of the enemy's detection zone.
 			velocity = (player.get_global_position() - position).normalized() * speed * delta 
 			
 			#the enimes velocity is the player's position/direction - the enemies position/direction
 			#mutiplied by the speed of the enemy
-			$AnimatedSprite2D.play("Jump")
+			anim.play("Jump")
 		else:
 			velocity = lerp(velocity, Vector2.ZERO, .07) #if the player is not in range, the velocity slowly drops to 0
-			$AnimatedSprite2D.play("Idle")
+			anim.play("Idle")
 		move_and_collide(velocity)
 	if dead:
-		$"detection"/CollisionShape2D.disabled = true #if dead, disable thier detection radius
+		$"detection_ms"/CollisionShape2D.disabled = true #if dead, disable thier detection radius
 		
 '''Detections'''
 
-func _on_detection_body_entered(body): #checks if the player enters the detection zone
+func _on_detection_ms_body_entered(body): #checks if the player enters the detection zone
 	if body.has_method("player"):
 		player_in_range = true
 		player = body
 
-func _on_detection_body_exited(body):  #checks if the player leaves the detection zone
+func _on_detection_ms_body_exited(body):  #checks if the player leaves the detection zone
 	if body.has_method("player"):
 		player_in_range = false 
 
 '''taking damage'''
-func _on_hitbox_area_entered(area):
+func _on_hitbox_ms_area_entered(area):
 	if area.name == "atk_right" || area.name == "atk_left" || area.name == "atk_up" || area.name == "atk_down":
 		take_damage() #sends the damage dealt to the function for calculating damage
 
@@ -66,10 +77,12 @@ func take_damage():
 
 func death(): # dies
 	dead = true
-	$AnimatedSprite2D.play("Death")
-	await $AnimatedSprite2D.animation_finished
-	GLOBAL.end_game_w()
+	anim.play("Death")
+	await anim.animation_finished
 	queue_free()
 	
-func Slime():
+func slime_mini():
 	pass
+
+
+

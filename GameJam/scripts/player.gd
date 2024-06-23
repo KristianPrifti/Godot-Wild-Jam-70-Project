@@ -127,15 +127,6 @@ func take_damage(damage, enemy):
 		enemy_cooldown = true
 		take_damage(damage, enemy)
 	
-	if boss_range and enemy_cooldown and enemy != null:
-		
-		GLOBAL.health = GLOBAL.health - damage
-		enemy_cooldown = false
-		await get_tree().create_timer(1).timeout
-		enemy_cooldown = true
-		take_damage(damage, enemy)
-		
-	
 	if enemy == null:
 		enemy_range = false
 	
@@ -151,8 +142,11 @@ func _on_hitbox_body_entered(body):
 		enemy_range = true
 		take_damage(1, body)
 	elif body.has_method("Slime") && !body.dead:
-		boss_range = true
+		enemy_range = true
 		take_damage(2, body)
+	elif body.has_method("slime_mini") && !body.dead:
+		enemy_range = true
+		take_damage(1, body)
 		
 func _on_hitbox_body_exited(body):
 	if body.has_method("goblin") && !body.dead:
@@ -162,7 +156,9 @@ func _on_hitbox_body_exited(body):
 	elif body.has_method("ghost") && !body.dead:
 		enemy_range = false
 	elif body.has_method("Slime") && !body.dead:
-		boss_range = false
+		enemy_range = false
+	elif body.has_method("slime_mini") && !body.dead:
+		enemy_range = false
 		
 func player():
 	pass

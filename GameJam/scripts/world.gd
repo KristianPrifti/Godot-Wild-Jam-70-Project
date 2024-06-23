@@ -16,6 +16,11 @@ var scenes = [
 	preload("res://level_6.tscn"),
 	preload("res://cut_scene.tscn"),
 	preload("res://level_7.tscn"),
+	preload("res://cut_scene.tscn"),
+	preload("res://corridoor.tscn"),
+	preload("res://cut_scene.tscn"),
+	preload("res://Boss_Room.tscn"),
+	preload("res://end_scene_win.tscn"),
 ]
 
 var curr_scene
