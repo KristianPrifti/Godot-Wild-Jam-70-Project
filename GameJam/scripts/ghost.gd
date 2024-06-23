@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 '''Enemy movement varibles'''
-var speed = 300
+@export var speed = 250
 var player_in_range = false
 var player = null
 

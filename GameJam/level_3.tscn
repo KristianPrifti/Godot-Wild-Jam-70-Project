@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dyd4siua4n4bj" path="res://tile_set.tres" id="1_rq4yg"]
 [ext_resource type="PackedScene" uid="uid://ce1681knjeh47" path="res://skeleton.tscn" id="3_ucsea"]
 [ext_resource type="PackedScene" uid="uid://b86glwof054wu" path="res://goblin.tscn" id="4_8aqqa"]
-[ext_resource type="PackedScene" path="res://shop.tscn" id="5_5x7ed"]
+[ext_resource type="PackedScene" uid="uid://c3006mys53cg1" path="res://shop.tscn" id="5_5x7ed"]
 [ext_resource type="FontFile" uid="uid://20gyl166ue3r" path="res://assets/kirifont/KiriFont.ttf" id="5_go2km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vdm"]
