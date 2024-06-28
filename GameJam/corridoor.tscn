@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://137flr1lua0t" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/all_unclassified/animated_props.png" id="2_0vq46"]
 [ext_resource type="Texture2D" uid="uid://diimnviwgyl0k" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/all_unclassified/props.png" id="2_ormoc"]
 [ext_resource type="Texture2D" uid="uid://dbgbxnjn64kip" path="res://assets/SGQ_Dungeon_v1_1_0/SGQ_Dungeon/all_unclassified/projectiles_animated.png" id="3_cv8t4"]
-[ext_resource type="PackedScene" uid="uid://c3006mys53cg1" path="res://shop.tscn" id="7_pxn7r"]
+[ext_resource type="PackedScene" path="res://shop.tscn" id="7_pxn7r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l72"]
 texture = ExtResource("2_0vq46")
